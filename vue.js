@@ -37,6 +37,9 @@ var VueJs = new Vue({
     document.querySelector('.up').addEventListener('pointerup', e => {
       isActiveUp = false
     })
+    document.addEventListener('touchmove', function (event) {
+        if (event.scale !== 1) { event.preventDefault(); }
+    }, false)
 
 
     if ($(window).width() > 1025) {
